@@ -52,6 +52,7 @@ function App() {
   return (
     <div>
       {/* <Button color={'blue'} text={'submit'} handleClick={clickButtonOne} /> */}
+      
 
       <Parent>
         {techCompanies.map((company, index) => {
