@@ -1,17 +1,23 @@
 import React from 'react';
 
-const Button = (props) => {
+const Button = ({ color, text }) => {
+  const colors = ['green', 'blue', 'red', 'orange', 'black'];
+
+  const colorPick = (clr) => {
+    const index = colors.findIndex((cl) => cl == clr);
+    return `bg-${colors[index]}-400`;
+  };
+
   return (
     <button
-      onClick={props.handleClick}
       className={`cursor-pointer px-3 py-1 
-        bg-${props.color}-400 
+        ${colorPick(color)}
         rounded-full text-md 
         text-white border m-1
-        border-${props.color}-800 
-        hover:bg-${props.color}-500`}
+        border-${color}-800 
+        hover:bg-${color}-500`}
     >
-      {props.text}
+      {text}
     </button>
   );
 };
